@@ -37,14 +37,13 @@
             android:layout_height="wrap_content"
             android:minHeight="50dp"
             android:background="@drawable/chatfrom_bg_normal"
-            android:text="有大吗。。。"
+            android:text="有大吗,赶紧开大啊，快点啊，在吗"
             android:textSize="18sp"
             android:textColor="#000"
             android:gravity="center_vertical"
             android:focusable="true"
             android:clickable="true"
-            android:lineSpacingExtra="2dp"
-            />
+            android:lineSpacingExtra="2dp"/>
     </LinearLayout>
 
 </LinearLayout>

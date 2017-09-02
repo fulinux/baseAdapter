@@ -1,9 +1,13 @@
 package com.zhy.sample.adapter.rv;
 
+import android.util.Log;
+
 import com.zhy.adapter.recyclerview.base.ItemViewDelegate;
 import com.zhy.adapter.recyclerview.base.ViewHolder;
 import com.zhy.sample.R;
 import com.zhy.sample.bean.ChatMessage;
+
+import static android.support.v7.widget.StaggeredGridLayoutManager.TAG;
 
 /**
  * Created by zhy on 16/6/22.
@@ -20,6 +24,7 @@ public class MsgSendItemDelagate implements ItemViewDelegate<ChatMessage>
     @Override
     public boolean isForViewType(ChatMessage item, int position)
     {
+        Log.i(TAG, "isForViewType: fulinux:" + !item.isComMeg());
         return !item.isComMeg();
     }
 

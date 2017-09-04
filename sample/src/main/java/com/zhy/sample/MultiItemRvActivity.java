@@ -36,7 +36,9 @@ public class MultiItemRvActivity extends AppCompatActivity
 
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        mDatas.addAll(ChatMessage.MOCK_DATAS);
+//        mDatas.addAll(ChatMessage.MOCK_DATAS);
+        ChatMessage msg = new ChatMessage(ChatMessage.MSG_CENTER, "早上好！", "需要什么帮助吗");
+        mDatas.add(msg);
         ChatAdapterForRv adapter = new ChatAdapterForRv(this, mDatas);
 
         mLoadMoreWrapper = new LoadMoreWrapper(adapter);
@@ -53,8 +55,8 @@ public class MultiItemRvActivity extends AppCompatActivity
                     {
                         boolean coming = Math.random() > 0.5;
                         ChatMessage msg = null;
-                        msg = new ChatMessage(coming ? R.drawable.renma : R.drawable.xiaohei, coming ? "人马" : "xiaohei", "where are you " + mDatas.size(),
-                                null, coming);
+                        msg = new ChatMessage(coming? 0:1, coming ? R.drawable.renma : R.drawable.xiaohei, coming ? "人马" : "xiaohei", "where are you " + mDatas.size(),
+                                null);
                         mDatas.add(msg);
                         mLoadMoreWrapper.notifyDataSetChanged();
 

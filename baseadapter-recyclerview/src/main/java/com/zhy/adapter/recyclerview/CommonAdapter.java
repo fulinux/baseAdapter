@@ -42,6 +42,16 @@ public abstract class CommonAdapter<T> extends MultiItemTypeAdapter<T>
             }
 
             @Override
+            public int getViewAlign(T item, int position) {
+                return 0;
+            }
+
+            @Override
+            public int getDelegateAlign() {
+                return 0;
+            }
+
+            @Override
             public void convert(ViewHolder holder, T t, int position)
             {
                 CommonAdapter.this.convert(holder, t, position);

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content">
+
+
+        <TextView
+            android:id="@+id/id_headline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:minHeight="40dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:textColor="#000"
+            android:text="你好！"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/id_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="有什么需要帮助的吗"
+            android:minHeight="40dp"
+            android:textColor="#000"
+            android:textSize="25sp"
+            android:gravity="center_vertical"
+            android:focusable="true"
+            android:clickable="true"
+            android:lineSpacingExtra="2dp"/>
+
+</LinearLayout>

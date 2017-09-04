@@ -24,8 +24,17 @@ public class MsgSendItemDelagate implements ItemViewDelegate<ChatMessage>
     @Override
     public boolean isForViewType(ChatMessage item, int position)
     {
-        Log.i(TAG, "isForViewType: fulinux:" + !item.isComMeg());
         return !item.isComMeg();
+    }
+
+    @Override
+    public int getDelegateAlign() {
+        return ChatMessage.MSG_RIGHT;
+    }
+
+    @Override
+    public int getViewAlign(ChatMessage item, int position) {
+        return item.getAlign();
     }
 
     @Override

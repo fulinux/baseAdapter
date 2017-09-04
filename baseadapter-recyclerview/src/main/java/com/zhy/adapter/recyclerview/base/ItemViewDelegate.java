@@ -13,6 +13,10 @@ public interface ItemViewDelegate<T>
 
     boolean isForViewType(T item, int position);
 
+    int getViewAlign(T item, int position);
+
+    int getDelegateAlign();
+
     void convert(ViewHolder holder, T t, int position);
 
 }

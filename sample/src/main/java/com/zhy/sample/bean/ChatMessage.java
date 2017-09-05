@@ -7,6 +7,7 @@ import java.util.List;
 
 public class ChatMessage
 {
+	private int mAlign;
 	private String mHeadLine;
 	private String mHint;
 	private int icon;
@@ -14,11 +15,17 @@ public class ChatMessage
 	private String content;
 	private String createDate;
 	private boolean isComMeg;
-	private int mAlign;
+	private String date;
+	private String weather;
+	private String temp;
 
 	public final static int MSG_LEFT = 0;
 	public final static int MSG_RIGHT = 1;
 	public final static int MSG_CENTER = 2;
+	public final static int MSG_WEATHER = 3;
+
+    public ChatMessage(){
+    }
 
 	public ChatMessage(int align, String headLine, String hint)
 	{
@@ -45,6 +52,16 @@ public class ChatMessage
 		this.content = content;
 		this.createDate = createDate;
 		this.mAlign = align;
+	}
+
+	public int setWeatherData(int align, int icon, String date, String weather, String temp){
+		this.mAlign = align;
+		this.date = date;
+		this.weather = weather;
+		this.temp = temp;
+		this.icon = icon;
+
+		return 0;
 	}
 
 	public boolean isComMeg()
@@ -119,6 +136,30 @@ public class ChatMessage
 
 	public void setHint(String hint) {
 		mHint = hint;
+	}
+
+	public String getDate() {
+		return date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
+	}
+
+	public String getWeather() {
+		return weather;
+	}
+
+	public void setWeather(String weather) {
+		this.weather = weather;
+	}
+
+	public String getTemp() {
+		return temp;
+	}
+
+	public void setTemp(String temp) {
+		this.temp = temp;
 	}
 
 	@Override

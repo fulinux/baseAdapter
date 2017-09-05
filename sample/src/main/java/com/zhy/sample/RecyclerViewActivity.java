@@ -2,15 +2,18 @@ package com.zhy.sample;
 
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.ListViewCompat;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,7 +24,10 @@ import com.zhy.adapter.recyclerview.wrapper.HeaderAndFooterWrapper;
 import com.zhy.adapter.recyclerview.wrapper.LoadMoreWrapper;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 
 public class RecyclerViewActivity extends AppCompatActivity
 {
@@ -60,7 +66,7 @@ public class RecyclerViewActivity extends AppCompatActivity
 
         initHeaderAndFooter();
 
-//        initEmptyView();
+        initEmptyView();
 
         mLoadMoreWrapper = new LoadMoreWrapper(mHeaderAndFooterWrapper);
         mLoadMoreWrapper.setLoadMoreView(R.layout.default_loading);
@@ -107,6 +113,7 @@ public class RecyclerViewActivity extends AppCompatActivity
     {
         mEmptyWrapper = new EmptyWrapper(mAdapter);
         mEmptyWrapper.setEmptyView(LayoutInflater.from(this).inflate(R.layout.empty_view, mRecyclerView, false));
+//        mEmptyWrapper.setEmptyView(R.id.id_empty_view_text);
     }
 
     private void initHeaderAndFooter()
@@ -119,6 +126,10 @@ public class RecyclerViewActivity extends AppCompatActivity
         t2.setText("Header 2");
         mHeaderAndFooterWrapper.addHeaderView(t1);
         mHeaderAndFooterWrapper.addHeaderView(t2);
+
+        TextView t3 = new TextView(this);
+        t3.setText("Foot 3");
+        mHeaderAndFooterWrapper.addFootView(t3);
     }
 
     private void initDatas()

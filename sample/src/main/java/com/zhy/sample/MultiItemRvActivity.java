@@ -41,6 +41,12 @@ public class MultiItemRvActivity extends AppCompatActivity
         mDatas.add(msg);
         ChatAdapterForRv adapter = new ChatAdapterForRv(this, mDatas);
 
+        ChatMessage msg1 = new ChatMessage();
+        msg1.setWeatherData(ChatMessage.MSG_WEATHER, R.drawable.renma, "今天", "晴天", "20℃");
+        mDatas.add(msg1);
+        mDatas.add(msg1);
+
+
         mLoadMoreWrapper = new LoadMoreWrapper(adapter);
         mLoadMoreWrapper.setLoadMoreView(LayoutInflater.from(this).inflate(R.layout.default_loading, mRecyclerView, false));
         mLoadMoreWrapper.setOnLoadMoreListener(new LoadMoreWrapper.OnLoadMoreListener()

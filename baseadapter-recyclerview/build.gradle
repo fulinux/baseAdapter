@@ -30,6 +30,6 @@ publish {
     artifactId = 'base-rvadapter'
     publishVersion = '3.0.3'
     desc = 'a easy adapter for recyclerview'
-    website = 'https://github.com/hongyangAndroid/baseAdapter'
+    website = 'https://github.com/fulinux/baseAdapter'
     licences = ['Apache-2.0']
 }
